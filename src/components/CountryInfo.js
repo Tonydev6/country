@@ -1,6 +1,8 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { Button } from './Button';
+import { Link } from 'react-router-dom';
+
 
 export const CountryInfo = () => {
   const {state} = useLocation();
@@ -46,12 +48,14 @@ export const CountryInfo = () => {
   return (
     <>
 
+    <div className='country-info'>
+    <Link to='/'>
     <button className='back-button'>
       Back
     </button>
+    </Link>
 
 
-    <div className='country-info'>
       <img
       alt=''
       src={state?.country.flags.svg}
@@ -64,8 +68,8 @@ export const CountryInfo = () => {
       <p> <strong>Region: </strong> {state?.country.region} </p>
       <p> <strong>Sub Region: </strong> {state?.country.subregion} </p>
       <p> <strong>Capital: </strong> {state?.country.capital} </p>
-      <p> <strong>Top Level Domain: </strong> {state?.country.population} </p>
-      <p> <strong>Currencies : </strong> {state?.country.population} </p>
+      <p> <strong>Top Level Domain: </strong> {state?.country.tld} </p>
+      <p> <strong>Currencies : </strong> {state.country === undefined ? '' : Object.keys(state.country.currencies)} </p>
       <p> <strong>Language: </strong> { state.country === undefined ? ' ': retrievLanguages(state?.country.languages)} </p>
       <h3> <strong>Border Countries: </strong> {state.country === undefined ? null : state?.country.borders.map((border)=>{
         return (
