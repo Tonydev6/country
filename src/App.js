@@ -5,13 +5,14 @@ import { Countries } from './components/Countries';
 import { Header } from './components/Header';
 import Filter from './components/Filter';
 import { CountryInfo } from './components/CountryInfo';
+// import { Homepage } from './views/Homepage';
 function App() {
   return (
     <>
     <BrowserRouter>
     <Header/>
     <Routes>
-      <Route path='/' element={[<Filter/>,<Countries/> ]}/>
+      <Route path='/' element={[<Countries/>]}/>
       <Route path='/countries/:name' element={<CountryInfo/>}/>
     </Routes>
     
@@ -19,14 +20,6 @@ function App() {
 
     </>
     
-    // <Routes>
-    // <Header/>
-    //   <Route exacr path='/'>    
-    //   <Filter/>
-    //   <Countries/>
-    //   </Route>
-    //   <Route path='/countries/:name' children={<CountryInfo/>}/>
-    // </Routes>
   );
 }
 

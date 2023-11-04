@@ -57,7 +57,6 @@ body{
   color: var(--White);
   font-family: inherit;
   width:100% ;
-  margin: 0 0 0px;
 
 }
 
@@ -105,18 +104,32 @@ a{
   text-decoration: none;
 }
 /* Country info */
+
 .country-info{
   height: 100%;
   display: flex;
   flex-flow:wrap row;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
-
+  /* padding: 50px; */ 
 }
+.country-info-description-container{
+  display: flex;
+  justify-content: space-between;
+}
+.country-info-details{
+  width: 40%;
+}
+
 .country-info img{
-  width: 45vw;
+  width: 600px;
   object-fit: contain;
+  margin-right: 100px;
   /* flex: 2; */
+}
+
+.details h1{
+  /* margin-bottom: 20px; */
 }
 
 .country-info-details h3{
@@ -127,21 +140,30 @@ a{
 button{
   border-radius: 0.2rem;
   border: none;
-  padding: 8px 45px;
+  /* padding: 8px 45px; */
   background-color: var(--Dark-Blue);
   color: var(--White);
   box-shadow: 0.5px 0.5px 0.5px 0.5px var(--Very-Dark-BlueT);
+  /* margin: 5px 5px 5px 5px; */
 }
 
 .back-button{
-  margin-top: 70px;
-  margin-left: 70px;
+  margin-bottom: 70px;
+  padding: 10px 45px;
 }
-
+.border{
+  padding: 8px 45px;
+  margin-right: 10px;
+}
 @media(min-width: 500px){
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .country-info-body{
+    padding: 60px;
+    }
+    
 }
 
 @media(min-width: 640px){
@@ -153,16 +175,18 @@ button{
   }
   .filter .form-control input{
     width: auto;
-    margin: 0 0 30px;
 
   }
   .filter .region-filter{
     width: auto;
+
   }
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  .country-info-body{
+    padding: 40px;
+    }
 }
 @media(min-width: 992px){
   .header .grid .filter {
@@ -172,5 +196,13 @@ button{
     grid-template-columns: repeat(4, 1fr);
     gap: 60px;
   }
+  .country-info-body{
+    padding: 70px;
+    }
 
+  .back-button{
+    /* margin-top: 70px;
+    margin-left: 70px; */
+    /* justify-content: flex-start; */
+  }
 }

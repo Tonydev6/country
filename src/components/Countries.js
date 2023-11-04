@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import Filter from './Filter';
 const url = 'https://restcountries.com/v3.1/all'
 export const Countries = () => {
+
+    
     const [countries, setCountries] = useState([]);
     const fetchCountries = async ()=>{
         const res = await fetch(url)
@@ -13,6 +16,13 @@ export const Countries = () => {
     }, [])
   return (
     <>
+    <Filter
+     searchInput={null}
+     setSearchInput={null}
+     setFiltered={null}
+     setCountries={setCountries}
+     countries={countries}
+    />
     <section className='grid'>
 
     {countries.map((country)=>{
