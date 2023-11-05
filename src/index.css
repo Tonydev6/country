@@ -144,7 +144,8 @@ button{
   background-color: var(--Dark-Blue);
   color: var(--White);
   box-shadow: 0.5px 0.5px 0.5px 0.5px var(--Very-Dark-BlueT);
-  /* margin: 5px 5px 5px 5px; */
+  margin: 5px 5px 5px 5px;
+  
 }
 
 .back-button{
@@ -160,10 +161,7 @@ button{
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .country-info-body{
-    padding: 60px;
-    }
-    
+  
 }
 
 @media(min-width: 640px){
@@ -185,7 +183,7 @@ button{
     grid-template-columns: repeat(3, 1fr);
   }
   .country-info-body{
-    padding: 40px;
+    padding: 45px;
     }
 }
 @media(min-width: 992px){
